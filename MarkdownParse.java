@@ -12,6 +12,7 @@ public class MarkdownParse {
         // find the next [, then find the ], then find the (, then read link upto next )
         int currentIndex = 0;
         while(currentIndex < markdown.length()) {
+
             int openBracket = markdown.indexOf("[", currentIndex);
 
             //--
@@ -38,7 +39,19 @@ public class MarkdownParse {
 
             //--
             System.out.println("currentIndex: " + currentIndex);
-            //--
+
+            // If there is an empty space, it will not iterate 
+            // any of the previous code.
+            int emptyLine = 0;
+            emptyLine = markdown.indexOf("", currentIndex);
+            
+            if (emptyLine != 0) {
+
+                // currentIndex updates even if the link does not get
+                // processed.
+                currentIndex += 1;
+                continue;
+            }
         }
 
         return toReturn;
