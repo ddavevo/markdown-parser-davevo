@@ -16,29 +16,29 @@ public class MarkdownParse {
             int openBracket = markdown.indexOf("[", currentIndex);
 
             //--
-            System.out.println("currentIndex: " + currentIndex);
-            System.out.println("openBracket [: " + openBracket);
+            // System.out.println("currentIndex: " + currentIndex);
+            // System.out.println("openBracket [: " + openBracket);
             //--
 
             int closeBracket = markdown.indexOf("]", openBracket);
             int openParen = markdown.indexOf("(", closeBracket);
 
             //--
-            System.out.println("closeBracket ]: " + closeBracket);
-            System.out.println("openParen (: " + openParen);
+            // System.out.println("closeBracket ]: " + closeBracket);
+            // System.out.println("openParen (: " + openParen);
             //--
 
             int closeParen = markdown.indexOf(")", openParen);
 
             //--
-            System.out.println("closeParen ): " + closeParen);
+            // System.out.println("closeParen ): " + closeParen);
             //--
 
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
 
             //--
-            System.out.println("currentIndex: " + currentIndex);
+            // System.out.println("currentIndex: " + currentIndex);
 
             // If there is an empty space, it will not iterate 
             // any of the previous code.
@@ -63,5 +63,6 @@ public class MarkdownParse {
         String content = Files.readString(fileName);
         ArrayList<String> links = getLinks(content);
 	    System.out.println(links);
+        System.out.println();
     }
 }
