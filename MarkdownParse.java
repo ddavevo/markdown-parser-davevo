@@ -43,10 +43,33 @@ public class MarkdownParse {
             // System.out.println("openParen (: " + openParen);
             //--
 
+            // if there is an empty char, make that the end bound
+            if (markdown.contains(".com")) {
+                int emptySpace = markdown.indexOf(".com", currentIndex);
+                toReturn.add(markdown.substring(openParen + 1, emptySpace + 4));
+                currentIndex = emptySpace + 1;
+                continue;
+            }
+
             int closeParen = markdown.indexOf(")", openParen);
 
             //--
-            // System.out.println("closeParen ): " + closeParen);
+            System.out.println("closeParen ): " + closeParen);
+            //--
+
+            int closeParenToEnd = closeParen;
+            while (closeParenToEnd < markdown.length()) {
+
+                // if there is a new ')' update closeParen
+                if (markdown.charAt(closeParenToEnd) == ')') {
+                    closeParen += 1;
+                }
+
+                closeParenToEnd += 1;
+            }
+
+            //--
+            System.out.println("closeParen ): " + closeParen);
             //--
 
             toReturn.add(markdown.substring(openParen + 1, closeParen));
@@ -54,7 +77,8 @@ public class MarkdownParse {
 
             //--
             // System.out.println("currentIndex: " + currentIndex);
-
+            //--
+            
         }
 
         return toReturn;
