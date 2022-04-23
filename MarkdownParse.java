@@ -5,8 +5,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 
-import org.junit.Test;
-
 public class MarkdownParse {
 
     public static ArrayList<String> getLinks(String markdown) {
@@ -15,19 +13,34 @@ public class MarkdownParse {
         int currentIndex = 0;
         while(currentIndex < markdown.length()) {
 
+            // If there is an empty space, it will not iterate 
+            // any of the previous code.
+            int nextLine = 0;
+            nextLine = markdown.indexOf("[", currentIndex);
+            System.out.println("nextLine: " + nextLine);
+            System.out.println("currentIndex: " + currentIndex);
+            
+            if (nextLine < 0) {
+
+                // currentIndex updates even if the link does not get
+                // processed.
+                currentIndex += 1;
+                continue;
+            }
+
             int openBracket = markdown.indexOf("[", currentIndex);
 
             //--
-            System.out.println("currentIndex: " + currentIndex);
-            System.out.println("openBracket [: " + openBracket);
+            // System.out.println("currentIndex: " + currentIndex);
+            // System.out.println("openBracket [: " + openBracket);
             //--
 
             int closeBracket = markdown.indexOf("]", openBracket);
             int openParen = markdown.indexOf("(", closeBracket);
 
             //--
-            System.out.println("closeBracket ]: " + closeBracket);
-            System.out.println("openParen (: " + openParen);
+            // System.out.println("closeBracket ]: " + closeBracket);
+            // System.out.println("openParen (: " + openParen);
             //--
 
             int closeParen = markdown.indexOf(")", openParen);
@@ -40,20 +53,8 @@ public class MarkdownParse {
             currentIndex = closeParen + 1;
 
             //--
-            System.out.println("currentIndex: " + currentIndex);
+            // System.out.println("currentIndex: " + currentIndex);
 
-            // If there is an empty space, it will not iterate 
-            // any of the previous code.
-            int emptyLine = 0;
-            emptyLine = markdown.indexOf("", currentIndex);
-            
-            if (emptyLine != 0) {
-
-                // currentIndex updates even if the link does not get
-                // processed.
-                currentIndex += 1;
-                continue;
-            }
         }
 
         return toReturn;
