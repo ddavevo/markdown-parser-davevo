@@ -45,8 +45,11 @@ public class MarkdownParse {
 
             // if there is an empty char, make that the end bound
             if (markdown.contains(".com")) {
+
+                int comLength = ".com".length();
                 int emptySpace = markdown.indexOf(".com", currentIndex);
-                toReturn.add(markdown.substring(openParen + 1, emptySpace + 4));
+                toReturn.add(markdown.substring(openParen + 1,
+                                                emptySpace + comLength));
                 currentIndex = emptySpace + 1;
                 continue;
             }

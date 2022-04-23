@@ -64,7 +64,7 @@ public class MarkdownParseTest {
         ArrayList<String> actualLinks = MarkdownParse.getLinks(content);
 
         ArrayList<String> expectedLinks = new ArrayList<>();
-        expectedLinks.add("https://shop.blackpinkmusic.com]");
+        expectedLinks.add("");
 
         assertEquals(actualLinks, expectedLinks);
 
