@@ -14,21 +14,6 @@ public class MarkdownParseTest {
     }
 
     @Test
-    public void testGetLinks() throws IOException {
-
-        Path fileName = Path.of("/Users/ddavepersona/Documents/GitHub/markdown-parser-davevo/test-file.md");
-        String content = Files.readString(fileName);
-        ArrayList<String> actualLinks = MarkdownParse.getLinks(content);
-
-        ArrayList<String> getLinksExpected = new ArrayList<>();
-        getLinksExpected.add("https://something.com");
-        getLinksExpected.add("some-thing.html");
-
-        assertEquals(actualLinks, getLinksExpected);
-
-    }
-
-    @Test
     public void testParse1() throws IOException {
 
         Path fileName = Path.of("/Users/ddavepersona/Documents/GitHub/markdown-parser-davevo/breaking-files.md");
@@ -45,12 +30,12 @@ public class MarkdownParseTest {
     @Test
     public void testParse2() throws IOException {
 
-        Path fileName = Path.of("/Users/ddavepersona/Documents/GitHub/markdown-parser-davevo/breaking2.md");
+        Path fileName = Path.of("/Users/ddavepersona/Documents/GitHub/markdown-parser-davevo/breaking2-dave.md");
         String content = Files.readString(fileName);
         ArrayList<String> actualLinks = MarkdownParse.getLinks(content);
 
         ArrayList<String> expectedLinks = new ArrayList<>();
-        expectedLinks.add("[https://shop.blackpinkmusic.com");
+        expectedLinks.add("https://shop.blackpinkmusic.com");
         expectedLinks.add("www.google.com");
 
         assertEquals(actualLinks, expectedLinks);
@@ -59,12 +44,13 @@ public class MarkdownParseTest {
     @Test
     public void testParse3() throws IOException {
 
-        Path fileName = Path.of("/Users/ddavepersona/Documents/GitHub/markdown-parser-davevo/breaking3.md");
+        Path fileName = Path.of("/Users/ddavepersona/Documents/GitHub/markdown-parser-davevo/breaking3-stella.md");
         String content = Files.readString(fileName);
         ArrayList<String> actualLinks = MarkdownParse.getLinks(content);
 
         ArrayList<String> expectedLinks = new ArrayList<>();
-        expectedLinks.add("");
+        expectedLinks.add("https://twice.jype.com");
+        expectedLinks.add("https://twice.jype.com");
 
         assertEquals(actualLinks, expectedLinks);
 

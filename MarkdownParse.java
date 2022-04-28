@@ -47,10 +47,10 @@ public class MarkdownParse {
             if (markdown.contains(".com")) {
 
                 int comLength = ".com".length();
-                int emptySpace = markdown.indexOf(".com", currentIndex);
+                int emptySpaceCom = markdown.indexOf(".com", currentIndex);
                 toReturn.add(markdown.substring(openParen + 1,
-                                                emptySpace + comLength));
-                currentIndex = emptySpace + 1;
+                                                emptySpaceCom));
+                currentIndex = emptySpaceCom + 1;
                 continue;
             }
 
