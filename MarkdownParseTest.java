@@ -16,7 +16,7 @@ public class MarkdownParseTest {
     @Test
     public void testParse1() throws IOException {
 
-        Path fileName = Path.of("/Users/ddavepersona/Documents/GitHub/markdown-parser-davevo/breaking-files.md");
+        Path fileName = Path.of("breaking-files.md");
         String content = Files.readString(fileName);
         ArrayList<String> actualLinks = MarkdownParse.getLinks(content);
 
@@ -30,7 +30,7 @@ public class MarkdownParseTest {
     @Test
     public void testParse2() throws IOException {
 
-        Path fileName = Path.of("/Users/ddavepersona/Documents/GitHub/markdown-parser-davevo/breaking2-dave.md");
+        Path fileName = Path.of("breaking2-dave.md");
         String content = Files.readString(fileName);
         ArrayList<String> actualLinks = MarkdownParse.getLinks(content);
 
@@ -45,7 +45,7 @@ public class MarkdownParseTest {
     @Test
     public void testParse3() throws IOException {
 
-        Path fileName = Path.of("/Users/ddavepersona/Documents/GitHub/markdown-parser-davevo/breaking3-stella.md");
+        Path fileName = Path.of("breaking3-stella.md");
         String content = Files.readString(fileName);
         ArrayList<String> actualLinks = MarkdownParse.getLinks(content);
 
@@ -60,7 +60,7 @@ public class MarkdownParseTest {
     @Test
     public void testParse4() throws IOException {
 
-        Path fileName = Path.of("/Users/ddavepersona/Documents/GitHub/markdown-parser-davevo/failing-file.md");
+        Path fileName = Path.of("failing-file.md");
         String content = Files.readString(fileName);
         ArrayList<String> actualLinks = MarkdownParse.getLinks(content);
 

@@ -17,8 +17,8 @@ public class MarkdownParse {
             // any of the previous code.
             int nextLine = 0;
             nextLine = markdown.indexOf("[", currentIndex);
-            System.out.println("nextLine: " + nextLine);
-            System.out.println("currentIndex: " + currentIndex);
+            // System.out.println("nextLine: " + nextLine);
+            // System.out.println("currentIndex: " + currentIndex);
             
             if (nextLine < 0) {
 
@@ -31,16 +31,16 @@ public class MarkdownParse {
             int openBracket = markdown.indexOf("[", currentIndex);
 
             //--
-            System.out.println("currentIndex: " + currentIndex);
-            System.out.println("openBracket [: " + openBracket);
+            // System.out.println("currentIndex: " + currentIndex);
+            // System.out.println("openBracket [: " + openBracket);
             //--
 
             int closeBracket = markdown.indexOf("]", openBracket);
             int openParen = markdown.indexOf("(", closeBracket);
 
             //--
-            System.out.println("closeBracket ]: " + closeBracket);
-            System.out.println("openParen (: " + openParen);
+            // System.out.println("closeBracket ]: " + closeBracket);
+            // System.out.println("openParen (: " + openParen);
             //--
 
             int closeParen = markdown.indexOf(")", openParen);
@@ -50,7 +50,7 @@ public class MarkdownParse {
             }
 
             //--
-            System.out.println("closeParen ): " + closeParen);
+            // System.out.println("closeParen ): " + closeParen);
             //--
 
             // if there is an empty char, make that the end bound
@@ -61,7 +61,7 @@ public class MarkdownParse {
                 toReturn.add(markdown.substring(openParen + 1,
                                                 emptySpaceCom + comLength));
                 currentIndex = emptySpaceCom + 1;
-                System.out.println("+: " + currentIndex);
+                // System.out.println("+: " + currentIndex);
                 continue;
             }
 
@@ -77,7 +77,7 @@ public class MarkdownParse {
             }
 
             //--
-            System.out.println("closeParen ): " + closeParen);
+            // System.out.println("closeParen ): " + closeParen);
             //--
 
             toReturn.add(markdown.substring(openParen + 1, closeParen));
