@@ -31,16 +31,26 @@ public class MarkdownParse {
             int openBracket = markdown.indexOf("[", currentIndex);
 
             //--
-            // System.out.println("currentIndex: " + currentIndex);
-            // System.out.println("openBracket [: " + openBracket);
+            System.out.println("currentIndex: " + currentIndex);
+            System.out.println("openBracket [: " + openBracket);
             //--
 
             int closeBracket = markdown.indexOf("]", openBracket);
             int openParen = markdown.indexOf("(", closeBracket);
 
             //--
-            // System.out.println("closeBracket ]: " + closeBracket);
-            // System.out.println("openParen (: " + openParen);
+            System.out.println("closeBracket ]: " + closeBracket);
+            System.out.println("openParen (: " + openParen);
+            //--
+
+            int closeParen = markdown.indexOf(")", openParen);
+
+            if (openParen == -1 || closeParen == -1){
+                return toReturn;
+            }
+
+            //--
+            System.out.println("closeParen ): " + closeParen);
             //--
 
             // if there is an empty char, make that the end bound
@@ -49,16 +59,11 @@ public class MarkdownParse {
                 int comLength = ".com".length();
                 int emptySpaceCom = markdown.indexOf(".com", currentIndex);
                 toReturn.add(markdown.substring(openParen + 1,
-                                                emptySpaceCom));
+                                                emptySpaceCom + comLength));
                 currentIndex = emptySpaceCom + 1;
+                System.out.println("+: " + currentIndex);
                 continue;
             }
-
-            int closeParen = markdown.indexOf(")", openParen);
-
-            //--
-            System.out.println("closeParen ): " + closeParen);
-            //--
 
             int closeParenToEnd = closeParen;
             while (closeParenToEnd < markdown.length()) {
