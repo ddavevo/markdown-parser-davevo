@@ -33,4 +33,4 @@ jobs:
       - name: Run a multi-line script
         run: | 
           javac MarkdownParse.java;
-          javac MarkdownParse args[0];
+          java MarkdownParse args[0];
