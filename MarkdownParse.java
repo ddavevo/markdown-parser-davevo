@@ -32,7 +32,6 @@ public class MarkdownParse {
                 continue;
             }
 
->>>>>>> 67ec86d2a22a57f6f4a084e138be669662b142da
             int openBracket = markdown.indexOf("[", currentIndex);
 
             //--

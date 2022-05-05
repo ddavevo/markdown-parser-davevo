@@ -7,10 +7,7 @@ import java.nio.file.Path;
 import java.util.*;
 
 public class MarkdownParseTest {
-<<<<<<< HEAD
-=======
 
->>>>>>> 67ec86d2a22a57f6f4a084e138be669662b142da
     @Test
     public void addition() {
         assertEquals(2, 1 + 1);
