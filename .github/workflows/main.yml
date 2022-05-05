@@ -31,10 +31,6 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
-<<<<<<< HEAD
         run: |
-=======
         run: | 
->>>>>>> 67ec86d2a22a57f6f4a084e138be669662b142da
-          javac -cp .:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar MarkdownParseTest.java
-          java -cp .:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar org.junit.runner.JUnitCore MarkdownParseTest
+          make Test
