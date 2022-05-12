@@ -52,7 +52,6 @@ public class MarkdownParseTest {
     @Test
     public void testParse1() throws IOException {
 
-        Path fileName = Path.of("/Users/ddavepersona/Desktop/Lab7-otherGroup/test1.md");
         String content = Files.readString(fileName);
         ArrayList<String> actualLinks = MarkdownParse.getLinks(content);
 
@@ -83,7 +82,6 @@ public class MarkdownParseTest {
         ArrayList<String> actualLinks = MarkdownParse.getLinks(content);
 
         ArrayList<String> expectedLinks = new ArrayList<>();
-        expectedLinks.add("(link.com");
 
         assertEquals(expectedLinks, actualLinks);
 
