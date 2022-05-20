@@ -14,7 +14,7 @@ public class MarkdownParseTest {
     }
 
     @Test
-    public void MarkdownParseTest() throws IOException{
+    public void MarkdownParseTest1() throws IOException{
         ArrayList<String> expected = 
         new ArrayList<>(List.of("https://something.com",
                             "some-thing.html"));
