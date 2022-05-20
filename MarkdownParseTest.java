@@ -157,7 +157,7 @@ public class MarkdownParseTest {
     @Test
     public void testSnippet1() throws IOException{
         ArrayList<String> expected = 
-        new ArrayList<>(List.of("url.com", "google.com",
+        new ArrayList<>(List.of("url.com", "`google.com",
                             "google.com", "ucsd.edu"));
         ArrayList<String> resultArray = 
         MarkdownParse.getLinks(Files.readString(Path.of("./snippet1.md")));
