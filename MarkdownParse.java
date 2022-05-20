@@ -36,18 +36,15 @@ public class MarkdownParse {
             
         }
 
-            System.out.println("currentIndex: " + currentIndex);
-        }
- 
         return toReturn;
     }
 
-
-    public static void main(String[] args) throws IOException {
-        Path fileName = Path.of(args[0]);
-        String content = Files.readString(fileName);
-        Graph graph = new Graph();
-        ArrayList<String> links = getLinks(content);
-        System.out.println(links);
+        public static void main(String[] args) throws IOException {
+            Path fileName = Path.of(args[0]);
+            String content = Files.readString(fileName);
+            Graph graph = new Graph();
+            ArrayList<String> links = getLinks(content);
+            System.out.println(links);
+        }
+ 
     }
-}
