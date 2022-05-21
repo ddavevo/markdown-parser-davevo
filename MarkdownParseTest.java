@@ -104,7 +104,7 @@ public class MarkdownParseTest {
 
         ArrayList<String> expected = new ArrayList<>();
         
-        Path fileName = Path.of("./test-file2.md");
+        Path fileName = Path.of("./test-file3.md");
         String content = Files.readString(fileName);
         ArrayList<String> actualLinks = MarkdownParse.getLinks(content);
 
