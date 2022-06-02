@@ -1,5 +1,7 @@
 # Makefile for MarkdownParse Final version
 
+CLASSPATH = lib/*:.
+
 # Step 1: make MarkdownParse.class
 MarkdownParse.class: MarkdownParse.java
 	javac MarkdownParse.java
@@ -11,3 +13,7 @@ MarkdownParseTest.class: MarkdownParseTest.java MarkdownParse.class
 # Step 3: run test cases
 test: MarkdownParseTest.class
 	java -cp .:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar org.junit.runner.JUnitCore MarkdownParseTest
+
+# Step 4: Test CommonMark
+TryCommonMark.class: TryCommonMark.java
+	javac -g -cp $(CLASSPATH) TryCommonMark.java
